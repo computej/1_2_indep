@@ -9,7 +9,14 @@
 </head>
 <body>
   <form id="questionare-form">
-    <!--  -->
+    <!-- last question: do you liek manual gc (i.e. freeing memory when done with it) -->
+    <fieldset id="question-5">
+      <legend>Which memory management scheme do you prefer?</legend>
+      <input type="radio" name="gc-pref" value="1" id="q5-radio1">
+      <label for="g5-radio1">Manual deletion</label>
+      <input type="radio" name="gc-pref" value="2" id="q5-radio2">
+      <label for="q5-radio2">Automatic garbage collection</label>
+    </fieldset>
   </form>
 </body>
 </html>
