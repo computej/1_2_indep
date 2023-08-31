@@ -9,8 +9,17 @@
 </head>
 <body>
   <form id="questionare-form">
-    <!-- last question: do you liek manual gc (i.e. freeing memory when done with it) -->
-    <fieldset id="question-5">
+    <!-- web or desktop? -->
+    <fieldset id="question-4">
+      <legend>Are you developing for web browsers or for a desktop?</legend>
+      <input type="radio" name="webdesk-pref" id="q1-radio1">
+      <label for="q1-radio1">A web browser</label>
+      <input type="radio" name="webdesk-pref" id="q1-radio2">
+      <label for="q1-radio2">A desktop</label>
+    </fieldset>
+    
+    <!-- last question for desktop: do you liek manual gc? (i.e. freeing memory when done with it) -->
+    <fieldset id="question-5" class="hidden">
       <legend>Which memory management scheme do you prefer?</legend>
       <input type="radio" name="gc-pref" value="1" id="q5-radio1">
       <label for="g5-radio1">Manual deletion</label>
@@ -18,5 +27,9 @@
       <label for="q5-radio2">Automatic garbage collection</label>
     </fieldset>
   </form>
+  <br>
+  <button id="next-button" type="button">&puncsp;Next&puncsp;</button>
+  <div id="results-show" class="hidden">It seems that you may like <span></span></div>
+
 </body>
 </html>
