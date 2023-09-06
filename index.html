@@ -10,20 +10,20 @@
 <body>
   <form id="questionare-form">
     <!-- web or desktop? -->
-    <fieldset id="question-4">
+    <fieldset id="question-1">
       <legend>Are you developing for web browsers or for a desktop?</legend>
-      <input type="radio" name="webdesk-pref" id="q1-radio1">
+      <input data-preference="2" data-next="0" type="radio" name="web-or-desk-pref" id="q1-radio1">
       <label for="q1-radio1">A web browser</label>
-      <input type="radio" name="webdesk-pref" id="q1-radio2">
+      <input data-next="5" type="radio" name="web-or-desk-pref" id="q1-radio2">
       <label for="q1-radio2">A desktop</label>
     </fieldset>
     
     <!-- last question for desktop: do you liek manual gc? (i.e. freeing memory when done with it) -->
     <fieldset id="question-5" class="hidden">
       <legend>Which memory management scheme do you prefer?</legend>
-      <input type="radio" name="gc-pref" value="1" id="q5-radio1">
+      <input data-preference="3" data-next="0" type="radio" name="gc-pref" value="1" id="q5-radio1">
       <label for="g5-radio1">Manual deletion</label>
-      <input type="radio" name="gc-pref" value="2" id="q5-radio2">
+      <input data-preference="1" data-next="0" type="radio" name="gc-pref" value="2" id="q5-radio2">
       <label for="q5-radio2">Automatic garbage collection</label>
     </fieldset>
   </form>
