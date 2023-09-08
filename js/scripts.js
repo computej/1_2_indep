@@ -3,7 +3,11 @@
 //for keeping track of what question we're on
 let questionNumber = 1;
 
-// 1 = C#; 2 = JavaScript; 3 = C++ (or maybe Rust?); 4 = ??
+// 1 = C#; 2 = ECMA/JavaScript; 3 = C++ (or maybe Rust?); 4 = Python
+// 5 = Java
+let branchNumber = 0;
+
+//for the showing of the results in #results-show
 function selectSuggestedLang(branchNumber) {
   //because GetAttribute returns a string
   let branchFloat = parseFloat(branchNumber)
@@ -14,6 +18,10 @@ function selectSuggestedLang(branchNumber) {
       return "JavaScript";
     case 3.0:
       return "C++";
+    case 4.0:
+      return "Python";
+    case 5.0:
+      return "Java";
     default:
       return "???";
   }
@@ -32,13 +40,6 @@ function hideAllFieldsetExcept(targetQuestion) {
     targetElement.style.display = "revert";
   }
 }
-
-//TODO: A function that advances to the next question
-// when clicking the "next-button" button.
-// custom attributes on the radio buttons
-// will be used to determine where to go
-// and the user's opinions
-// a value of zero will end the survey
 
 function nextQuestionStuff(question) {
   let fieldSet = document.querySelector("[id*=question-".concat(question,"]"));
@@ -59,7 +60,7 @@ function nextQuestionStuff(question) {
           hideAllFieldsetExcept(questionNumber);
           break;
         }
-        //or stop the survey and show
+        //or stop the survey and show the results
         else if(dataPreference) {
           hideAllFieldsetExcept(0);
           let resultsDiv = document.getElementById("results-show");
