@@ -1,3 +1,25 @@
 .hidden {
   display: none;
 }
+
+body {
+  background-color: silver;
+}
+
+form, #results-show {
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+fieldset {
+  border-style: solid;
+  border-width: calc(1ch * (2/3));
+  border-image-source: linear-gradient(45deg, #3f87a6, #ebf8e1,#f69d3c);
+  border-image-slice: 1;
+  border-image-repeat: round;
+/*   box-shadow: 5px 5px 0px 1px black; */
+}
+
+button {
+  margin: 10px auto;
+}

@@ -31,7 +31,6 @@ function hideAllFieldsetExcept(targetQuestion) {
   //hide every FieldSet in the form except the one we want
   let fieldSets = document.querySelectorAll("[id|=question]");
   fieldSets.forEach(element => {
-    console.log(element);
     element.style.display = "none";
   });
   let targetElement = document.querySelector("[id*=question-".concat(targetQuestion,"]"));
@@ -43,10 +42,8 @@ function hideAllFieldsetExcept(targetQuestion) {
 
 function nextQuestionStuff(question) {
   let fieldSet = document.querySelector("[id*=question-".concat(question,"]"));
-  console.log("Question ".concat(question));
   if(fieldSet) {
     let foundSomething = false;
-    console.log(fieldSet.children);
     //find the radios
     let childrenCopy = Array.from(fieldSet.children);
     for (const element of childrenCopy) {
