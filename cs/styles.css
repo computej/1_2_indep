@@ -4,6 +4,7 @@
 
 body {
   background-color: silver;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', system-ui, sans-serif;
 }
 
 form, #results-show {
@@ -13,11 +14,23 @@ form, #results-show {
 
 fieldset {
   border-style: solid;
-  border-width: calc(1ch * (2/3));
-  border-image-source: linear-gradient(45deg, #3f87a6, #ebf8e1,#f69d3c);
+  border-width: calc(1ch * (1/2));
+  /* backup color */
+  border-color: rgba(6,74,164,1);
+  border-image-source: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(6,74,164,1) 65%, rgba(2,0,36,1) 100%);
   border-image-slice: 1;
   border-image-repeat: round;
-/*   box-shadow: 5px 5px 0px 1px black; */
+}
+
+legend {
+  background-color: black;
+  color: white;
+}
+/* put spaces before and after the legend text
+to make it look neater */
+legend::before, legend::after {
+  /* thin space */
+  content: "\2009"
 }
 
 button {
