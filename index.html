@@ -30,20 +30,20 @@
       <label for="q5-radio3">idk</label>
     </fieldset>
 
-    <!-- what engine features -->
+    <!-- pointers, or lack thereof -->
     <fieldset id="question-4" class="hidden">
-      <legend>Which kind of desktop program?</legend>
-      <input data-next="5" type="radio" name="gc-pref" value="1" id="q2-radio1">
-      <label for="g2-radio1">A Game</label>
-      <input data-next="5" type="radio" name="gc-pref" value="2" id="q2-radio2">
-      <label for="q2-radio2">An App</label>
+      <legend>Do you want pointers?</legend>
+      <input data-preference="5" data-next="0" type="radio" name="gc-pref" value="1" id="q4-radio1">
+      <label for="g2-radio1">Yes</label>
+      <input data-next="5" type="radio" name="gc-pref" value="2" id="q4-radio2">
+      <label for="q2-radio2">No</label>
     </fieldset>
 
     <fieldset id="question-3" class="hidden">
       <legend>Which kind of desktop program?</legend>
-      <input data-next="5" type="radio" name="gc-pref" value="1" id="q2-radio1">
+      <input data-next="5" type="radio" name="gc-pref" value="1" id="q3-radio1">
       <label for="g2-radio1">A Game</label>
-      <input data-next="5" type="radio" name="gc-pref" value="2" id="q2-radio2">
+      <input data-next="2" type="radio" name="gc-pref" value="2" id="q3-radio2">
       <label for="q2-radio2">An App</label>
     </fieldset>
 
@@ -52,7 +52,7 @@
       <legend>Which memory management scheme do you prefer?</legend>
       <input data-preference="3" data-next="0" type="radio" name="gc-pref" value="1" id="q2-radio1">
       <label for="g2-radio1">Manual deletion</label>
-      <input data-next="3" type="radio" name="gc-pref" value="2" id="q2-radio2">
+      <input data-next="4" type="radio" name="gc-pref" value="2" id="q2-radio2">
       <label for="q2-radio2">Automatic garbage collection</label>
     </fieldset>
     <button id="next-button" type="button">&puncsp;Next&puncsp;</button>

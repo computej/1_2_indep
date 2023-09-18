@@ -1,3 +1,5 @@
+/* for elements that should
+start invisible */
 .hidden {
   display: none;
 }
@@ -15,11 +17,11 @@ form, #results-show {
 fieldset {
   border-style: solid;
   border-width: calc(1ch * (1/2));
-  /* backup color */
-  border-color: rgba(6,74,164,1);
   border-image-source: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(6,74,164,1) 65%, rgba(2,0,36,1) 100%);
   border-image-slice: 1;
   border-image-repeat: round;
+  /* backup color */
+  border-color: rgba(6,74,164,1);
 }
 
 legend {
@@ -33,6 +35,8 @@ legend::before, legend::after {
   content: "\2009"
 }
 
+/* to not touch the top of the 
+preceding element */
 button {
   margin: 10px auto;
 }

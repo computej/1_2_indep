@@ -74,12 +74,11 @@ function nextQuestionStuff(question) {
 // UI
 
 function windowLoadListener(event) {
-  let buttan = document.getElementById("next-button");
-  buttan.addEventListener("click", function(event) {
+  let nextButton = document.getElementById("next-button");
+  nextButton.addEventListener("click", function(event) {
     event.preventDefault();
     nextQuestionStuff(questionNumber);
   });
-
 }
 
 window.addEventListener("load",windowLoadListener);
