@@ -40,3 +40,7 @@ preceding element */
 button {
   margin: 10px auto;
 }
+
+div span {
+  font-style: italic;
+}
