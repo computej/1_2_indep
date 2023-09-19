@@ -41,10 +41,11 @@ function hideAllFieldsetExcept(targetQuestion) {
 }
 
 function nextQuestionStuff(question) {
+  // find the active question
   let fieldSet = document.querySelector("[id*=question-".concat(question,"]"));
   if(fieldSet) {
-    let foundSomething = false;
     //find the radios
+    //we need an array copy because forEach() can't be stopped by break;
     let childrenCopy = Array.from(fieldSet.children);
     for (const element of childrenCopy) {
       let dataNext = element.getAttribute("data-next");
