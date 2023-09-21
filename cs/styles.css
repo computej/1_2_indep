@@ -41,6 +41,12 @@ button {
   margin: 10px auto;
 }
 
-div span {
+#results-show {
+  border-style: outset;
+  border-width: calc(1ch * (1/2));
+  width: max(30ch, 25vw);
+}
+
+#results-show span {
   font-style: italic;
 }
