@@ -20,7 +20,7 @@ fieldset {
   border-image-source: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(6,74,164,1) 65%, rgba(2,0,36,1) 100%);
   border-image-slice: 1;
   border-image-repeat: round;
-  /* backup color */
+  /* backup color, in case border-image doesn't work */
   border-color: rgba(6,74,164,1);
 }
 
@@ -35,7 +35,7 @@ legend::before, legend::after {
   content: "\2009"
 }
 
-/* to not touch the top of the 
+/* to not directly touch the top of the 
 preceding element */
 button {
   margin: 10px auto;
