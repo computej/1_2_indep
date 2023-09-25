@@ -11,7 +11,7 @@ let branchNumber = 0;
 function selectSuggestedLang(branchNumber) {
   //because GetAttribute returns a string
   let branchFloat = parseFloat(branchNumber)
-  switch(branchFloat) {
+  switch (branchFloat) {
     case 1.0:
       return "C#";
     case 2.0:
@@ -35,7 +35,7 @@ function hideAllFieldsetExcept(targetQuestion) {
   });
   let targetElement = document.querySelector("[id*=question-".concat(targetQuestion,"]"));
   //check if it exists first then make visible
-  if(targetElement) {
+  if (targetElement) {
     targetElement.style.display = "revert";
   }
 }
@@ -43,23 +43,23 @@ function hideAllFieldsetExcept(targetQuestion) {
 function nextQuestionStuff(question) {
   // find the active question
   let fieldSet = document.querySelector("[id*=question-".concat(question,"]"));
-  if(fieldSet) {
-    //find the radios
-    //we need an array copy because forEach() can't be stopped by break;
+  if (fieldSet) {
+    //find the radio buttons
+    //don't use forEach() because it can't be stopped by break;
     let childrenCopy = Array.from(fieldSet.children);
     for (const element of childrenCopy) {
       let dataNext = element.getAttribute("data-next");
       let dataPreference = element.getAttribute("data-preference");
-      if(element.nodeName === "INPUT" && element.checked) {
+      if (element.nodeName === "INPUT" && element.checked) {
         //once we find the radio that is checked,
         //we go to the next question
-        if(dataNext && dataNext != "0") {
+        if (dataNext && dataNext != "0") {
           questionNumber = dataNext;
           hideAllFieldsetExcept(questionNumber);
           break;
         }
         //or stop the survey and show the results
-        else if(dataPreference) {
+        else if (dataPreference) {
           hideAllFieldsetExcept(0);
           let resultsDiv = document.getElementById("results-show");
           let resultsSpan = document.querySelector("#results-show span");
