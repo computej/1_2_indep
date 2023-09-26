@@ -85,6 +85,7 @@ function windowLoadListener(event) {
       resultsDiv.style.display = "none";
       questionNumber = 1;
       hideAllFieldsetExcept(1);
+      nextButton.textContent = "Next";
     }
     else{
       nextQuestionStuff(questionNumber);
