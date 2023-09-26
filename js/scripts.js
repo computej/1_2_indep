@@ -65,6 +65,8 @@ function nextQuestionStuff(question) {
           let resultsSpan = document.querySelector("#results-show span");
           resultsSpan.textContent = selectSuggestedLang(dataPreference);
           resultsDiv.style.display = "block";
+          let nextButton = document.getElementById("next-button");
+          nextButton.textContent = "Reset";
           break;
         }
       }
@@ -78,7 +80,15 @@ function windowLoadListener(event) {
   let nextButton = document.getElementById("next-button");
   nextButton.addEventListener("click", function(event) {
     event.preventDefault();
-    nextQuestionStuff(questionNumber);
+    let resultsDiv = document.getElementById("results-show");
+    if (resultsDiv && resultsDiv.style.display == "block") {
+      resultsDiv.style.display = "none";
+      questionNumber = 1;
+      hideAllFieldsetExcept(1);
+    }
+    else{
+      nextQuestionStuff(questionNumber);
+    }
   });
 }
 
