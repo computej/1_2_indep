@@ -3,23 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="cs/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
   <script src="js/scripts.js"></script>
-  <title>Document</title>
+  <title>Quiz</title>
 </head>
 <body>
   <form id="questionare-form">
-    <!-- web or desktop? -->
     <fieldset id="question-1">
       <legend>Are you developing for web browsers or for a desktop?</legend>
-      <!-- we only know of one, not counting WebASM -->
       <input data-preference="2" data-next="0" type="radio" name="web-or-desk-pref" id="q1-radio1">
       <label for="q1-radio1">A web browser</label>
       <input data-next="3" type="radio" name="web-or-desk-pref" id="q1-radio2">
       <label for="q1-radio2">A desktop</label>
     </fieldset>
 
-    <!-- manual gc? (i.e. freeing memory when done with it) -->
     <fieldset id="question-2" class="hidden">
       <legend>Which memory management scheme do you prefer?</legend>
       <input data-next="5" type="radio" name="gc-pref" value="1" id="q2-radio1">
@@ -36,7 +33,6 @@
       <label for="q2-radio2">An App</label>
     </fieldset>
 
-    <!-- pointers, or lack thereof -->
     <fieldset id="question-4" class="hidden">
       <legend>Do you want pointers?</legend>
       <input data-preference="1" data-next="0" type="radio" name="gc-pref" value="1" id="q4-radio1">
@@ -45,17 +41,12 @@
       <label for="q2-radio2">No</label>
     </fieldset>
 
-    <!-- unknown question 5 -->
     <fieldset id="question-5" class="hidden">
       <legend>In your engine, what would you want? </legend>
-      <!-- which is used by Unity -->
       <input data-preference="1" data-next="0" type="radio" name="web-or-desk-pref" id="q5-radio1">
       <label for="q5-radio1">More modularity</label>
-      <!-- which is used by UE4/5. -->
       <input data-preference="3" data-next="0" type="radio" name="web-or-desk-pref" id="q5-radio2">
       <label for="5-radio2">More out-of-the-box tools</label>
-      <!-- <input data-preference="5" data-next="0" type="radio" name="web-or-desk-pref" id="q5-radio3">
-      <label for="q5-radio3">three</label> -->
     </fieldset>
 
 

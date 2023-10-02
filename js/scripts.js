@@ -1,15 +1,10 @@
 // Business
 
-//for keeping track of what question we're on
-let questionNumber = 1;
+let questionNumberTracker = 1;
 
-// 1 = C#; 2 = ECMA/JavaScript; 3 = C++ (or maybe Rust?); 4 = Python
-// 5 = Java
 let branchNumber = 0;
 
-//for the showing of the results in #results-show
 function selectSuggestedLang(branchNumber) {
-  //because GetAttribute returns a string
   let branchFloat = parseFloat(branchNumber)
   switch (branchFloat) {
     case 1.0:
@@ -28,7 +23,6 @@ function selectSuggestedLang(branchNumber) {
 };
 
 function hideAllFieldsetExcept(targetQuestion) {
-  //hide every FieldSet in the form except the one we want
   let fieldSets = document.querySelectorAll("[id|=question]");
   fieldSets.forEach(element => {
     element.style.display = "none";
@@ -41,29 +35,22 @@ function hideAllFieldsetExcept(targetQuestion) {
 }
 
 function nextQuestionStuff(question) {
-  // find the active question
-  let fieldSet = document.querySelector("[id*=question-".concat(question,"]"));
-  if (fieldSet) {
-    //find the radio buttons
-    //don't use forEach() because it can't be stopped by break;
-    let childrenCopy = Array.from(fieldSet.children);
-    for (const element of childrenCopy) {
-      let dataNext = element.getAttribute("data-next");
-      let dataPreference = element.getAttribute("data-preference");
+  let activeQuestionFieldset = document.querySelector("[id*=question-".concat(question,"]"));
+  if (activeQuestionFieldset) {
+    let radioButtonArray = Array.from(activeQuestionFieldset.children);
+    for (const element of radioButtonArray) {
+      let nextQuestionNumber = element.getAttribute("data-next");
+      let langPreferenceNumber = element.getAttribute("data-preference");
       if (element.nodeName === "INPUT" && element.checked) {
-        //once we find the radio that is checked,
-        //we go to the next question
-        if (dataNext && dataNext != "0") {
-          questionNumber = dataNext;
-          hideAllFieldsetExcept(questionNumber);
+        if (nextQuestionNumber && nextQuestionNumber != "0") {
+          questionNumberTracker = nextQuestionNumber;
+          hideAllFieldsetExcept(questionNumberTracker);
           break;
-        }
-        //or stop the survey and show the results
-        else if (dataPreference) {
+        } else if (langPreferenceNumber) { //stop the survey and show the results
           hideAllFieldsetExcept(0);
           let resultsDiv = document.getElementById("results-show");
           let resultsSpan = document.querySelector("#results-show span");
-          resultsSpan.textContent = selectSuggestedLang(dataPreference);
+          resultsSpan.textContent = selectSuggestedLang(langPreferenceNumber);
           resultsDiv.style.display = "block";
           let nextButton = document.getElementById("next-button");
           nextButton.textContent = "Reset";
@@ -83,12 +70,12 @@ function windowLoadListener(event) {
     let resultsDiv = document.getElementById("results-show");
     if (resultsDiv && resultsDiv.style.display == "block") {
       resultsDiv.style.display = "none";
-      questionNumber = 1;
+      questionNumberTracker = 1;
       hideAllFieldsetExcept(1);
       nextButton.textContent = "Next";
     }
     else{
-      nextQuestionStuff(questionNumber);
+      nextQuestionStuff(questionNumberTracker);
     }
   });
 }
